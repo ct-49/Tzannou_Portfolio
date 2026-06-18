@@ -3,72 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christoforos Tzannou | Portfolio</title>
+    <title>Christoforos Tzannou | Interactive & 3D Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header / Hero Section -->
     <header class="hero">
         <div class="container hero-container">
-            <img src="ME.jpg" alt="Christoforos Tzannou" class="profile-img">
+            <div class="profile-wrapper">
+                <img src="ME.jpg" alt="Christoforos Tzannou" class="profile-img">
+            </div>
             <h1>Christoforos Tzannou</h1>
             <p class="subtitle">3D Modeler & Interactive Applications Developer</p>
-            <p class="bio">Graduate of the University of the Aegean (BSc Cultural Technology & Communication | MSc Cultural Informatics). Specializing in Unity, Blender, Cinema 4D, and C#.</p>
+            <p class="bio">
+                MSc Graduate in Cultural Informatics (Digital Cultural Product Design) and BSc in Cultural Technology & Communication from the University of the Aegean. Passionate about bringing digital worlds to life through code, 3D art, and immersive technologies.
+            </p>
+            <div class="hero-badges">
+                <span class="badge status">Available for Projects</span>
+                <span class="badge location">Mytilene, Greece</span>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container">
+        
+        <h2 class="section-title">Featured Projects</h2>
 
-        <!-- Project 1: AR -->
-        <section class="project-section">
-            <h2>📱 Project: "HistoricAR" (Master's Thesis)</h2>
-            <p class="project-desc">An Augmented Reality educational application developed with Unity and Vuforia Engine, designed to teach Minoan Civilization.</p>
-            <div class="featured-image">
-                <img src="AR.png" alt="HistoricAR Application Screenshot">
-            </div>
-        </section>
+        <div class="portfolio-grid">
 
-        <!-- Project 2: 3D Modeling -->
-        <section class="project-section">
-            <h2>🎨 3D Modeling & Rendering (Cinema 4D / Blender)</h2>
-            <div class="grid-2">
-                <img src="Cinema1.png" alt="3D Render 1">
-                <img src="Cinema2.png" alt="3D Render 2">
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="AR.png" alt="HistoricAR App">
+                </div>
+                <div class="card-content">
+                    <span class="project-category">Augmented Reality</span>
+                    <h3>HistoricAR — Master's Thesis</h3>
+                    <p>An advanced AR educational application designed for high school students. It utilizes marker-based tracking to project high-fidelity 3D models of Minoan cultural artifacts, integrated with interactive gamification systems, custom C# scripts, and rich audio narrations.</p>
+                    <div class="tech-tags">
+                        <span>Unity</span>
+                        <span>Vuforia Engine</span>
+                        <span>C#</span>
+                        <span>3D UI</span>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <!-- Project 3: UI/UX -->
-        <section class="project-section">
-            <h2>📐 UI/UX Design (Figma)</h2>
-            <div class="grid-2">
-                <img src="Figma1.png" alt="Figma UI 1">
-                <img src="Figma2.png" alt="Figma UI 2">
-                <img src="Figma3.png" alt="Figma UI 3">
-                <img src="Figma4.png" alt="Figma UI 4">
+            <div class="project-card">
+                <div class="card-image gallery-2x2">
+                    <img src="Figma1.png" alt="YZY Concept Design 1">
+                    <img src="Figma2.png" alt="YZY Concept Design 2">
+                    <img src="Figma3.png" alt="YZY Concept Design 3">
+                    <img src="Figma4.png" alt="YZY Concept Design 4">
+                </div>
+                <div class="card-content">
+                    <span class="project-category">UI/UX Design</span>
+                    <h3>YZY Platform — Interface Architecture</h3>
+                    <p>Comprehensive UI/UX design casing for a specialized brand platform inspired by the aesthetic footprint of Kanye West (Ye). Built from extensive research and moodboards into highly responsive mobile/web interfaces with precise typography staging (Inter scale) and cohesive brand color mapping.</p>
+                    <div class="tech-tags">
+                        <span>Figma</span>
+                        <span>UI/UX Research</span>
+                        <span>Wireframing</span>
+                        <span>Prototyping</span>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <!-- Project 4: Cultural Projects -->
-        <section class="project-section">
-            <h2>🏛️ Cultural Projects: Theorama & Twine</h2>
-            <div class="grid-3">
-                <img src="Theorama1.png" alt="Theorama Project 1">
-                <img src="Theorama2.png" alt="Theorama Project 2">
-                <img src="Theorama 3.png" alt="Theorama Project 3">
+            <div class="project-card">
+                <div class="card-image gallery-3">
+                    <img src="Theorama1.png" alt="Theorama Project Scene 1">
+                    <img src="Theorama2.png" alt="Theorama Project Scene 2">
+                    <img src="Theorama 3.png" alt="Theorama Project Scene 3">
+                </div>
+                <div class="card-content">
+                    <span class="project-category">Cultural Technology</span>
+                    <h3>Theorama — Alternative History Experience</h3>
+                    <p>An interactive spatial application depicting a "what-if" cultural scenario exploring a historical intersection between prominent Greek painters. Features custom assets, multimedia narrative branching, and custom user interface dynamics to convey digital cultural preservation.</p>
+                    <div class="tech-tags">
+                        <span>Digital Storytelling</span>
+                        <span>Multimedia</span>
+                        <span>UI Design</span>
+                    </div>
+                </div>
             </div>
-            <div class="grid-2 margin-top">
-                <img src="Twine.png" alt="Twine Game 1">
-                <img src="Twine2.png" alt="Twine Game 2">
-            </div>
-        </section>
 
+            <div class="project-card">
+                <div class="card-image gallery-2">
+                    <img src="Cinema1.png" alt="F1 Chess Piece Render 1">
+                    <img src="Cinema2.png" alt="F1 Chess Piece Render 2">
+                </div>
+                <div class="card-content">
+                    <span class="project-category">3D Modeling & Animation</span>
+                    <h3>F1 Collector's Chess Set</h3>
+                    <p>A full conceptual redesign of a classic chess set into a high-octane, Formula 1 limited collector's edition. Developed using advanced polygon manipulation, custom hard-surface textures, complex node-based metallic shaders, and atmospheric cave lighting profiles using imported Cinema 4D structures and real-time animations.</p>
+                    <div class="tech-tags">
+                        <span>Cinema 4D</span>
+                        <span>Blender</span>
+                        <span>Lighting & Shaders</span>
+                        <span>Mixamo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-image gallery-2">
+                    <img src="Twine.png" alt="Twine Narrative Layout">
+                    <img src="Twine2.png" alt="Twine Node Structure">
+                </div>
+                <div class="card-content">
+                    <span class="project-category">Game Design & System Logic</span>
+                    <h3>Interactive Narratives & Unity Environment Mechanics</h3>
+                    <p>Deep-dive architecture into game state management. Implemented rigorous data persistence structures using Unity PlayerPrefs, custom raycasting runtime scripts for physics-based environmental interaction (dynamic tool mechanics), and intricate non-linear storytelling graphs built via Twine script layouts.</p>
+                    <div class="tech-tags">
+                        <span>Unity 3D</span>
+                        <span>Twine</span>
+                        <span>C# Scripting</span>
+                        <span>Game Logic</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Christoforos Tzannou. All rights reserved.</p>
+        <p>&copy; 2026 Christoforos Tzannou. Tailored for Next-Gen Interactive Media.</p>
     </footer>
 
 </body>
