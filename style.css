@@ -24,7 +24,7 @@ body {
 
 .container {
     width: 92%;
-    max-width: 680px; /* Απόλυτα καθαρό single column */
+    max-width: 680px; 
     margin: 0 auto;
 }
 
@@ -88,7 +88,7 @@ body {
 .portfolio-grid {
     display: flex;
     flex-direction: column;
-    gap: 4rem; /* Μεγάλο κενό ανάμεσα στα projects */
+    gap: 4rem; 
 }
 
 .project-card {
@@ -96,25 +96,22 @@ body {
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    display: block; /* Καταργούμε το flex για να μην σπάνε οι εικόνες */
 }
 
-/* SOLID VERTICAL MEDIA STACK (BEHANCE STYLE) */
+/* ΑΠΛΟ ΚΑΙ ΣΤΑΘΕΡΟ VERTICAL LAYOUT */
 .card-media {
     width: 100%;
-    display: flex;
-    flex-direction: column; /* Οι εικόνες μπαίνουν η μία κάτω από την άλλη */
     background-color: #050507;
 }
 
 .card-media img {
-    width: 100%;
-    height: auto; /* Προσαρμόζεται αυτόματα στο πλάτος */
-    max-height: 400px; /* Όριο ύψους για να μην βγαίνουν τεράστιες */
-    object-fit: cover; /* Κόβει σωστά αν ξεπερνάει το όριο */
+    width: 100%;        /* Αναγκάζει την εικόνα να πιάσει όλο το πλάτος */
+    height: auto;       /* Υπολογίζει αυτόματα το σωστό ύψος χωρίς παραμόρφωση */
+    max-height: 420px;  /* Δεν την αφήνει να γίνει τεράστια */
+    object-fit: cover;  /* Κόβει όμορφα αν ξεπερνάει το μέγεθος */
     display: block;
-    border-bottom: 1px solid var(--border); /* Διαχωριστικό γραμμής ανάμεσα στις φωτό */
+    border-bottom: 1px solid var(--border); 
 }
 
 /* Content Details */
