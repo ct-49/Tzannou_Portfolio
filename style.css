@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Header / Hero */
+.hero {
+    background-color: #1a1a1e;
+    border-bottom: 1px solid #29292e;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #04d361;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+.subtitle {
+    color: #04d361;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.bio {
+    max-width: 600px;
+    color: #a8a8b3;
+    font-size: 1rem;
+}
+
+/* Project Sections */
+.project-section {
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #29292e;
+}
+
+.project-section h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.project-desc {
+    color: #a8a8b3;
+    margin-bottom: 1.5rem;
+}
+
+/* Images & Grids */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+.featured-image {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.margin-top {
+    margin-top: 1.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: #737380;
+    font-size: 0.9rem;
+    background-color: #1a1a1e;
+    border-top: 1px solid #29292e;
+}
+
+/* Responsive for Mobile Devices */
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
