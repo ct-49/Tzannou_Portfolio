@@ -24,7 +24,7 @@ body {
 
 .container {
     width: 92%;
-    max-width: 680px; /* Καθαρό single-column layout */
+    max-width: 680px; 
     margin: 0 auto;
 }
 
@@ -80,102 +80,4 @@ body {
 
 /* Portfolio Feed Section */
 .section-title {
-    font-size: 1.4rem;
-    margin: 4rem 0 1.5rem 0;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.portfolio-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem; /* Μεγάλο κενό ανάμεσα στα projects */
-}
-
-.project-card {
-    background-color: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ΚΑΘΑΡΟ VERTICAL STACK ΓΙΑ ΤΙΣ ΕΙΚΟΝΕΣ */
-.card-media {
-    width: 100%;
-    display: flex;
-    flex-direction: column; /* Οι εικόνες μπαίνουν η μία κάτω από την άλλη */
-    background-color: #050507;
-}
-
-.card-media img {
-    width: 100%;
-    height: auto;
-    max-height: 420px; /* Όριο ύψους για να μην βγαίνουν τεράστιες */
-    object-fit: cover; /* Γεμίζει το κουτί ομοιόμορφα χωρίς να παραμορφώνεται */
-    display: block;
-    border-bottom: 2px solid var(--border); /* Διαχωριστική γραμμή ανάμεσα στις φωτογραφίες */
-}
-
-/* Αφαίρεση της γραμμής από την τελευταία εικόνα του project */
-.card-media img:last-child {
-    border-bottom: none;
-}
-
-/* Project Text Content */
-.card-content {
-    padding: 2.2rem;
-}
-
-.category {
-    color: var(--accent-blue);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.card-content h3 {
-    font-size: 1.35rem;
-    color: #ffffff;
-    margin-bottom: 0.8rem;
-    letter-spacing: -0.01em;
-}
-
-.card-content p {
-    color: var(--text-dim);
-    font-size: 0.95rem;
-    margin-bottom: 1.8rem;
-    text-align: justify;
-}
-
-/* Tech Tags / Badges */
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tags span {
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border);
-    color: #e5e7eb;
-    padding: 0.25rem 0.7rem;
-    border-radius: 4px;
-    font-size: 0.78rem;
-    font-weight: 500;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 3rem 0;
-    color: #4b5563;
-    font-size: 0.85rem;
-    margin-top: 6rem;
-    border-top: 1px solid var(--border);
-}
+    font-size
