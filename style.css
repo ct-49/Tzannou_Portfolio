@@ -1,56 +1,24 @@
-:root {
-    --bg-dark: #070709;
-    --bg-panel: #101014;
-    --bg-nav: #0b0b0e;
-    --accent: #00ff66;
-    --accent-blue: #00e1ff;
-    --border: #1a1a22;
-    --text: #f3f4f6;
-    --text-dim: #9ca3af;
+/* Απλό και λειτουργικό CSS */
+body {
+    background-color: #070709 !important;
+    color: #f3f4f6 !important;
+    font-family: sans-serif;
+    line-height: 1.6;
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { background-color: var(--bg-dark); color: var(--text); font-family: sans-serif; line-height: 1.6; }
-
-.container { width: 92%; max-width: 680px; margin: 0 auto; }
-
-.hero { background-color: var(--bg-nav); border-bottom: 1px solid var(--border); padding: 4rem 0 3rem 0; text-align: center; }
-
-.hero-container { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
-
-.profile-wrapper { border: 2px solid var(--accent); padding: 4px; border-radius: 50%; }
-
-.profile-img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; }
-
-.hero h1 { font-size: 2.1rem; color: #ffffff; }
-
-.subtitle { color: var(--accent); font-weight: 600; text-transform: uppercase; font-size: 0.95rem; }
-
-.bio { color: var(--text-dim); font-size: 0.95rem; }
-
-.section-title { font-size: 1.4rem; margin: 4rem 0 1.5rem 0; color: #ffffff; text-transform: uppercase; }
-
-.portfolio-grid { display: flex; flex-direction: column; gap: 4rem; }
-
-.project-card { background-color: var(--bg-panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-
-.card-media { width: 100%; display: flex; flex-direction: column; background-color: #050507; }
-
-.card-media img { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--border); }
-
-.card-media img:last-child { border-bottom: none; }
-
-.card-content { padding: 2.2rem; }
-
-.category { color: var(--accent-blue); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
-
-.card-content h3 { font-size: 1.35rem; color: #ffffff; margin-bottom: 0.8rem; }
-
-.card-content p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 1.8rem; text-align: justify; }
-
-.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-
-.tags span { background-color: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); color: #e5e7eb; padding: 0.25rem 0.7rem; border-radius: 4px; font-size: 0.78rem; }
-
-footer { text-align: center; padding: 3rem 0; color: #4b5563; border-top: 1px solid var(--border); margin-top: 6rem; }
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.project-card {
+    background: #101014;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
