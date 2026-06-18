@@ -1,7 +1,12 @@
+/* ==========================================
+   Core Layout & Cyberpunk Dark Variables
+   ========================================== */
 :root {
     --bg-dark: #08080a;
     --bg-panel: #111114;
-    --accent: #00ff66;
+    --bg-nav: #0d0d10;
+    --accent: #00ff66;       /* Neon Green */
+    --accent-blue: #00e1ff;  /* Cyber Blue */
     --border: #1f1f24;
     --text: #f3f4f6;
     --text-dim: #9ca3af;
@@ -16,8 +21,9 @@
 body {
     background-color: var(--bg-dark);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.5;
+    overflow-x: hidden;
 }
 
 .container {
@@ -26,11 +32,13 @@ body {
     margin: 0 auto;
 }
 
-/* Compact Hero */
+/* ==========================================
+   Compact Premium Hero Section
+   ========================================== */
 .hero {
-    background-color: #0d0d10;
+    background: radial-gradient(circle at top right, rgba(0, 255, 102, 0.03), transparent), var(--bg-nav);
     border-bottom: 1px solid var(--border);
-    padding: 4rem 0 3rem 0;
+    padding: 5rem 0 3.5rem 0;
     text-align: center;
 }
 
@@ -45,131 +53,178 @@ body {
     border: 2px solid var(--accent);
     padding: 4px;
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.15);
 }
 
 .profile-img {
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
 }
 
 .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
+    font-weight: 800;
     letter-spacing: -0.03em;
+    color: #ffffff;
 }
 
 .subtitle {
     color: var(--accent);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .bio {
-    max-width: 550px;
+    max-width: 580px;
     color: var(--text-dim);
     font-size: 0.95rem;
 }
 
-/* Portfolio Layout - Clean Grid Blocks */
+/* ==========================================
+   Portfolio Layout & Typography
+   ========================================== */
 .section-title {
-    font-size: 1.5rem;
-    margin: 3rem 0 1.5rem 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 4rem 0 2rem 0;
     color: #ffffff;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
 }
 
 .portfolio-grid {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
-/* Professional Aspect-Ratio Cards */
+/* ==========================================
+   Professional Responsive Cards
+   ========================================== */
 .project-card {
     background-color: var(--bg-panel);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr;
+    transition: all 0.3s ease;
 }
 
 @media (min-width: 768px) {
     .project-card {
-        grid-template-columns: 45% 55%;
+        grid-template-columns: 45% 55%; /* 45% αριστερά η εικόνα, 55% δεξιά το κείμενο */
     }
 }
 
-/* Image Control to prevent HUGE sizing */
+.project-card:hover {
+    border-color: rgba(0, 255, 102, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 255, 102, 0.03);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   Image Container & Advanced Galleries Fix
+   ========================================== */
 .card-image {
     background-color: #09090b;
     position: relative;
-    height: 240px; /* Σταθερό ελεγχόμενο ύψος */
+    height: 280px; /* Κλειδώνει αυστηρά το ύψος σε όλα τα κουτιά */
+    width: 100%;
     overflow: hidden;
 }
 
 @media (min-width: 768px) {
     .card-image {
-        height: auto; /* Προσαρμόζεται αυτόματα στο κουτί */
-        min-height: 100%;
+        height: 100%; /* Στον υπολογιστή παίρνει το πλήρες ύψος της κάρτας */
+        min-height: 280px;
     }
 }
 
+/* Απόλυτος έλεγχος για να μην ξεχειλώνει ΚΑΜΙΑ εικόνα */
 .card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Κόβει τη φωτογραφία σωστά αντί να την ξεχειλώνει */
+    object-fit: cover; /* Κόβει τη φωτογραφία σωστά μέσα στο κουτί χωρίς να την ξεχειλώνει */
     display: block;
+    transition: transform 0.4s ease;
 }
 
-/* Multi-image setups inside cards */
+.project-card:hover .card-image img {
+    transform: scale(1.02);
+}
+
+/* Διπλό Layout (3D / Theorama / Twine) */
 .gallery-split {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 3px !important;
+    background-color: var(--border);
 }
 
+/* Full UI/UX Figma Grid (2x2 Layout) */
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 2px;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+    gap: 3px !important;
+    background-color: var(--border);
 }
 
-/* Card Content Typography */
+/* ==========================================
+   Card Content & Tech Tags
+   ========================================== */
 .card-content {
-    padding: 2rem;
+    padding: 2.2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .category {
-    color: #00e1ff;
-    font-size: 0.75rem;
+    color: var(--accent-blue);
+    font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.3rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
 }
 
 .card-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #ffffff;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.7rem;
+    font-weight: 700;
 }
 
 .card-content p {
     color: var(--text-dim);
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     margin-bottom: 1.5rem;
 }
 
-/* Tags */
+.card-content p strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Minimalist Tags */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -177,19 +232,30 @@ body {
 }
 
 .tags span {
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border);
     color: #d1d5db;
-    padding: 0.25rem 0.65rem;
+    padding: 0.25rem 0.7rem;
     border-radius: 4px;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
+.project-card:hover .tags span {
+    border-color: rgba(0, 225, 255, 0.2);
+    background-color: rgba(0, 225, 255, 0.01);
+}
+
+/* ==========================================
+   Footer Section
+   ========================================== */
 footer {
     text-align: center;
     padding: 3rem 0;
     color: #4b5563;
     font-size: 0.85rem;
-    margin-top: 4rem;
+    margin-top: 5rem;
     border-top: 1px solid var(--border);
+    background-color: var(--bg-nav);
 }
