@@ -1,24 +1,178 @@
-/* Απλό και λειτουργικό CSS */
+:root {
+    --bg-dark: #070709;
+    --bg-panel: #101014;
+    --bg-nav: #0b0b0e;
+    --accent: #00ff66;       
+    --accent-blue: #00e1ff;  
+    --border: #1a1a22;
+    --text: #f3f4f6;
+    --text-dim: #9ca3af;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #070709 !important;
-    color: #f3f4f6 !important;
-    font-family: sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
 }
+
 .container {
-    width: 90%;
-    max-width: 800px;
+    width: 92%;
+    max-width: 680px; 
     margin: 0 auto;
 }
-.project-card {
-    background: #101014;
-    padding: 2rem;
-    margin: 2rem 0;
-    border: 1px solid #333;
-    border-radius: 10px;
+
+/* Header / Profile Section */
+.hero {
+    background-color: var(--bg-nav);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 0 3rem 0;
+    text-align: center;
 }
-img {
-    max-width: 100%;
-    height: auto;
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.profile-wrapper {
+    border: 2px solid var(--accent);
+    padding: 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
+}
+
+.profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
     display: block;
+}
+
+.hero h1 {
+    font-size: 2.1rem;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+}
+
+.subtitle {
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.bio {
+    max-width: 540px;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+/* Portfolio Feed Section */
+.section-title {
+    font-size: 1.4rem;
+    margin: 4rem 0 1.5rem 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.portfolio-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; 
+}
+
+.project-card {
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ΟΛΟΚΛΗΡΩΤΙΚΗ ΔΙΟΡΘΩΣΗ: ΦΥΣΙΚΟ ΜΕΓΕΘΟΣ ΕΙΚΟΝΩΝ */
+.card-media {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    background-color: #050507;
+}
+
+.card-media img {
+    width: 100%;
+    height: auto; /* Αφήνει την εικόνα να πάρει το σωστό της ύψος αναλογικά */
+    display: block;
+    border-bottom: 2px solid var(--border); 
+}
+
+.card-media img:last-child {
+    border-bottom: none;
+}
+
+/* Project Text Content */
+.card-content {
+    padding: 2.2rem;
+}
+
+.category {
+    color: var(--accent-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.card-content h3 {
+    font-size: 1.35rem;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.01em;
+}
+
+.card-content p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+    text-align: justify;
+}
+
+/* Tech Tags / Badges */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tags span {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    color: #e5e7eb;
+    padding: 0.25rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: #4b5563;
+    font-size: 0.85rem;
+    margin-top: 6rem;
+    border-top: 1px solid var(--border);
 }
