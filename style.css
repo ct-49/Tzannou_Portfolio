@@ -115,7 +115,7 @@ body {
 }
 
 /* ==========================================
-   Professional Aspect-Ratio Cards
+   Professional Responsive Cards
    ========================================== */
 .project-card {
     background-color: var(--bg-panel);
@@ -129,7 +129,7 @@ body {
 
 @media (min-width: 768px) {
     .project-card {
-        grid-template-columns: 45% 55%;
+        grid-template-columns: 45% 55%; /* 45% αριστερά η εικόνα, 55% δεξιά το κείμενο */
     }
 }
 
@@ -140,26 +140,28 @@ body {
 }
 
 /* ==========================================
-   Image Container & Advanced Galleries
+   Image Container & Advanced Galleries Fix
    ========================================== */
 .card-image {
     background-color: #09090b;
     position: relative;
-    height: 250px; /* Σταθερό ελεγχόμενο ύψος για να μην ξεχειλώνουν οι φωτό */
+    height: 280px; /* Κλειδώνει αυστηρά το ύψος σε όλα τα κουτιά */
+    width: 100%;
     overflow: hidden;
 }
 
 @media (min-width: 768px) {
     .card-image {
-        height: auto;
-        min-height: 100%;
+        height: 100%; /* Στον υπολογιστή παίρνει το πλήρες ύψος της κάρτας */
+        min-height: 280px;
     }
 }
 
+/* Απόλυτος έλεγχος για να μην ξεχειλώνει ΚΑΜΙΑ εικόνα */
 .card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Κόβει τη φωτογραφία έξυπνα στο μέγεθος του κουτιού */
+    object-fit: cover; /* Κόβει τη φωτογραφία σωστά μέσα στο κουτί χωρίς να την ξεχειλώνει */
     display: block;
     transition: transform 0.4s ease;
 }
@@ -168,22 +170,21 @@ body {
     transform: scale(1.02);
 }
 
-/* Double Image Layout (3D / Theorama / Twine) */
+/* Διπλό Layout (3D / Theorama / Twine) */
 .gallery-split {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 3px !important;
     background-color: var(--border);
 }
 
 /* Full UI/UX Figma Grid (2x2 Layout) */
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 3px;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+    gap: 3px !important;
     background-color: var(--border);
-    padding: 2px;
 }
 
 /* ==========================================
@@ -193,68 +194,4 @@ body {
     padding: 2.2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-.category {
-    color: var(--accent-blue);
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.4rem;
-}
-
-.card-content h3 {
-    font-size: 1.4rem;
-    color: #ffffff;
-    margin-bottom: 0.7rem;
-    font-weight: 700;
-}
-
-.card-content p {
-    color: var(--text-dim);
-    font-size: 0.92rem;
-    margin-bottom: 1.5rem;
-}
-
-.card-content p strong {
-    color: #ffffff;
-    font-weight: 600;
-}
-
-/* Minimalist Tags */
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-}
-
-.tags span {
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border);
-    color: #d1d5db;
-    padding: 0.25rem 0.7rem;
-    border-radius: 4px;
-    font-size: 0.76rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.project-card:hover .tags span {
-    border-color: rgba(0, 225, 255, 0.2);
-    background-color: rgba(0, 225, 255, 0.01);
-}
-
-/* ==========================================
-   Footer Section
-   ========================================== */
-footer {
-    text-align: center;
-    padding: 3rem 0;
-    color: #4b5563;
-    font-size: 0.85rem;
-    margin-top: 5rem;
-    border-top: 1px solid var(--border);
-    background-color: var(--bg-nav);
-}
+    justify
