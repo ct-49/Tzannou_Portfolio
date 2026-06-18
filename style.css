@@ -23,12 +23,12 @@ body {
 }
 
 .container {
-    width: 92%;
-    max-width: 680px; 
+    width: 90%;
+    max-width: 650px; 
     margin: 0 auto;
 }
 
-/* Profile Header */
+/* Header */
 .hero {
     background-color: var(--bg-nav);
     border-bottom: 1px solid var(--border);
@@ -47,7 +47,6 @@ body {
     border: 2px solid var(--accent);
     padding: 4px;
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
 }
 
 .profile-img {
@@ -60,7 +59,6 @@ body {
 
 .hero h1 {
     font-size: 2.1rem;
-    letter-spacing: -0.03em;
     color: #ffffff;
 }
 
@@ -73,12 +71,11 @@ body {
 }
 
 .bio {
-    max-width: 520px;
     color: var(--text-dim);
     font-size: 0.92rem;
 }
 
-/* Portfolio Layout */
+/* Portfolio Feed */
 .section-title {
     font-size: 1.4rem;
     margin: 3rem 0 1.5rem 0;
@@ -88,7 +85,7 @@ body {
 .portfolio-grid {
     display: flex;
     flex-direction: column;
-    gap: 4rem; 
+    gap: 3rem; 
 }
 
 .project-card {
@@ -96,27 +93,26 @@ body {
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
-    display: block; /* Καταργούμε το flex για να μην σπάνε οι εικόνες */
 }
 
-/* ΑΠΛΟ ΚΑΙ ΣΤΑΘΕΡΟ VERTICAL LAYOUT */
+/* BULLETPROOF IMAGE CONTAINER */
 .card-media {
     width: 100%;
+    height: 300px; /* Σταθερό, ελεγχόμενο ύψος */
+    overflow: hidden;
     background-color: #050507;
 }
 
 .card-media img {
-    width: 100%;        /* Αναγκάζει την εικόνα να πιάσει όλο το πλάτος */
-    height: auto;       /* Υπολογίζει αυτόματα το σωστό ύψος χωρίς παραμόρφωση */
-    max-height: 420px;  /* Δεν την αφήνει να γίνει τεράστια */
-    object-fit: cover;  /* Κόβει όμορφα αν ξεπερνάει το μέγεθος */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Γεμίζει το κουτί τέλεια χωρίς να ξεχειλώνει */
     display: block;
-    border-bottom: 1px solid var(--border); 
 }
 
 /* Content Details */
 .card-content {
-    padding: 2rem;
+    padding: 1.8rem;
 }
 
 .category {
@@ -124,7 +120,6 @@ body {
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
     margin-bottom: 0.4rem;
     display: block;
 }
@@ -141,7 +136,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Tech Badges */
+/* Tags */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -159,9 +154,9 @@ body {
 
 footer {
     text-align: center;
-    padding: 3rem 0;
+    padding: 2.5rem 0;
     color: #4b5563;
     font-size: 0.82rem;
-    margin-top: 5rem;
+    margin-top: 4rem;
     border-top: 1px solid var(--border);
 }
