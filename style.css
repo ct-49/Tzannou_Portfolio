@@ -95,10 +95,12 @@ body {
     overflow: hidden;
 }
 
-/* BULLETPROOF IMAGE CONTAINER */
+/* CONTAINER ΕΙΚΟΝΑΣ ΠΟΥ ΔΕΝ ΧΑΛΑΕΙ ΠΟΤΕ */
 .card-media {
     width: 100%;
-    height: 300px; /* Σταθερό, ελεγχόμενο ύψος */
+    height: auto;
+    min-height: 250px;
+    max-height: 380px;
     overflow: hidden;
     background-color: #050507;
 }
@@ -106,7 +108,9 @@ body {
 .card-media img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Γεμίζει το κουτί τέλεια χωρίς να ξεχειλώνει */
+    min-height: 250px;
+    max-height: 380px;
+    object-fit: cover; /* Γεμίζει το κουτί χωρίς να παραμορφώνει την εικόνα */
     display: block;
 }
 
