@@ -1,13 +1,10 @@
-/* ==========================================
-   Core Layout & Cyberpunk Dark Variables
-   ========================================== */
 :root {
-    --bg-dark: #08080a;
-    --bg-panel: #111114;
-    --bg-nav: #0d0d10;
+    --bg-dark: #070709;
+    --bg-panel: #101014;
+    --bg-nav: #0b0b0e;
     --accent: #00ff66;       
     --accent-blue: #00e1ff;  
-    --border: #1f1f24;
+    --border: #1a1a22;
     --text: #f3f4f6;
     --text-dim: #9ca3af;
 }
@@ -26,12 +23,12 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 800px; /* Πιο μαζεμένο πλάτος για σωστό look */
+    width: 92%;
+    max-width: 720px; /* Καθαρό, σφιχτό single-column layout */
     margin: 0 auto;
 }
 
-/* Header Profile */
+/* Profile Header */
 .hero {
     background-color: var(--bg-nav);
     border-bottom: 1px solid var(--border);
@@ -62,27 +59,28 @@ body {
 }
 
 .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     letter-spacing: -0.03em;
+    color: #ffffff;
 }
 
 .subtitle {
     color: var(--accent);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .bio {
-    max-width: 550px;
+    max-width: 520px;
     color: var(--text-dim);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
-/* Portfolio Feed */
+/* Portfolio Layout */
 .section-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 3rem 0 1.5rem 0;
     color: #ffffff;
 }
@@ -90,76 +88,84 @@ body {
 .portfolio-grid {
     display: flex;
     flex-direction: column;
-    gap: 3rem; /* Απόσταση μεταξύ των καρτών */
+    gap: 3.5rem; /* Απόσταση ασφαλείας μεταξύ των καρτών */
 }
 
-/* Showcase Cards - Behance Style */
 .project-card {
     background-color: var(--bg-panel);
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
     display: flex;
-    flex-direction: column; /* Εικόνα πάνω, κείμενο κάτω */
+    flex-direction: column;
 }
 
-/* Image Control - Aspect Ratio 16:9 για να μην ξεχειλώνει ΠΟΤΕ */
-.card-image {
+/* BULLETPROOF MEDIA CONTAINER: Κλειδώνει το μέγεθος */
+.card-media {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Κλειδώνει το σχήμα σαν οθόνη */
-    overflow: hidden;
-    background-color: #000;
+    max-height: 320px; 
+    background-color: #050507;
+    overflow-x: auto; /* Επιτρέπει οριζόντιο scroll αν είναι πολλές φωτό */
+    display: flex;
+    gap: 2px;
+    border-bottom: 1px solid var(--border);
 }
 
-.card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Κόβει αυτόματα χωρίς να παραμορφώνει */
+/* Κρύβουμε το scrollbar για αισθητικούς λόγους */
+.card-media::-webkit-scrollbar {
+    height: 4px;
+}
+.card-media::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+}
+
+.card-media img {
+    height: 320px;
+    object-fit: cover;
     display: block;
 }
 
-/* Grids για τις διπλές/τετραπλές φωτό */
-.gallery-split {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 2px !important;
+/* Όταν έχει μία φωτογραφία, απλώνει σε όλο το πλάτος */
+.card-media.single img {
+    width: 100%;
 }
 
-.gallery-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-rows: 1fr 1fr !important;
-    gap: 2px !important;
+/* Όταν έχει πολλές φωτογραφίες, παίρνουν ίσες αναλογίες χωρίς να ξεχειλώνουν */
+.card-media.multi img {
+    flex: 1 1 auto;
+    min-width: 45%;
+    max-width: 100%;
 }
 
-/* Card Texts */
+/* Content Details */
 .card-content {
-    padding: 2rem;
+    padding: 1.8rem;
 }
 
 .category {
     color: var(--accent-blue);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
     display: block;
 }
 
 .card-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     color: #ffffff;
     margin-bottom: 0.6rem;
 }
 
 .card-content p {
     color: var(--text-dim);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
 }
 
-/* Skills Tags */
+/* Tech Badges */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -167,19 +173,19 @@ body {
 }
 
 .tags span {
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border);
     color: #d1d5db;
-    padding: 0.25rem 0.65rem;
+    padding: 0.2rem 0.6rem;
     border-radius: 4px;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
 }
 
 footer {
     text-align: center;
     padding: 3rem 0;
     color: #4b5563;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     margin-top: 5rem;
     border-top: 1px solid var(--border);
 }
