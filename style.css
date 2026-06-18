@@ -24,7 +24,7 @@ body {
 
 .container {
     width: 92%;
-    max-width: 720px; /* Καθαρό, σφιχτό single-column layout */
+    max-width: 680px; /* Απόλυτα καθαρό single column */
     margin: 0 auto;
 }
 
@@ -88,7 +88,7 @@ body {
 .portfolio-grid {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem; /* Απόσταση ασφαλείας μεταξύ των καρτών */
+    gap: 4rem; /* Μεγάλο κενό ανάμεσα στα projects */
 }
 
 .project-card {
@@ -100,47 +100,26 @@ body {
     flex-direction: column;
 }
 
-/* BULLETPROOF MEDIA CONTAINER: Κλειδώνει το μέγεθος */
+/* SOLID VERTICAL MEDIA STACK (BEHANCE STYLE) */
 .card-media {
     width: 100%;
-    max-height: 320px; 
-    background-color: #050507;
-    overflow-x: auto; /* Επιτρέπει οριζόντιο scroll αν είναι πολλές φωτό */
     display: flex;
-    gap: 2px;
-    border-bottom: 1px solid var(--border);
-}
-
-/* Κρύβουμε το scrollbar για αισθητικούς λόγους */
-.card-media::-webkit-scrollbar {
-    height: 4px;
-}
-.card-media::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 10px;
+    flex-direction: column; /* Οι εικόνες μπαίνουν η μία κάτω από την άλλη */
+    background-color: #050507;
 }
 
 .card-media img {
-    height: 320px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Όταν έχει μία φωτογραφία, απλώνει σε όλο το πλάτος */
-.card-media.single img {
     width: 100%;
-}
-
-/* Όταν έχει πολλές φωτογραφίες, παίρνουν ίσες αναλογίες χωρίς να ξεχειλώνουν */
-.card-media.multi img {
-    flex: 1 1 auto;
-    min-width: 45%;
-    max-width: 100%;
+    height: auto; /* Προσαρμόζεται αυτόματα στο πλάτος */
+    max-height: 400px; /* Όριο ύψους για να μην βγαίνουν τεράστιες */
+    object-fit: cover; /* Κόβει σωστά αν ξεπερνάει το όριο */
+    display: block;
+    border-bottom: 1px solid var(--border); /* Διαχωριστικό γραμμής ανάμεσα στις φωτό */
 }
 
 /* Content Details */
 .card-content {
-    padding: 1.8rem;
+    padding: 2rem;
 }
 
 .category {
